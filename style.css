@@ -1,0 +1,111 @@
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  background-color: #fbff39;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+#title {
+  line-height: 50px;
+  letter-spacing: -3px;
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 15px;
+  margin: 20px 0px;
+}
+
+#start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+#start {
+  background-color: black;
+  color: white;
+  font-size: 50px;
+  border-radius: 15px;
+  padding: 20px 30px;
+  border: none;
+  margin: 20px;
+}
+
+#rps-container {
+  width: calc(100% - 400px);
+  max-width: 900px;
+  min-width: 400px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rps-inner-container {
+  flex-shrink: 2;
+  height: 80%;
+  width: 33.333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rock,
+#paper,
+#scissors {
+  filter: drop-shadow(8px 3px 3px rgba(0, 0, 0, 0.6));
+}
+
+#rock {
+  width: 60%;
+}
+
+#paper {
+  width: 85%;
+}
+
+#scissors {
+  width: 90%;
+}
+
+#scoreboard {
+  display: flex;
+  justify-content: space-around;
+  width: calc(100% - 400px);
+  max-width: 900px;
+  min-width: 400px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.minor-score {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 20px;
+}
+
+@media screen and (max-width 1100px) {
+  #scoreboard {
+    justify-content: space-evenly;
+  }
+}

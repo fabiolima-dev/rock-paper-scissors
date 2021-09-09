@@ -5,9 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js"></script>
-    <title>Rock Paper Scissors</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght900&display=swap" rel="stylesheet">
+    <title>ROCK & PAPER & SCISSORS</title>
 </head>
 <body>
-    
+    <div id="title-container">
+        <h1 id="title">ROCK &<BR>PAPER &<BR>SCISSORS</h1>
+    </div>
+    <div id="start-container">
+        <form>
+
+            <button id="start" type="submit">START GAME</button>
+        </form>
+    </div>    
+    <div id="rps-container">
+        <div class="rps-inner-container">
+            <img id="rock" src="images/rock.png" alt="rock">
+        </div>
+        <div class="rps-inner-container">
+            <img id="paper" src="images/paper.png" alt="paper">
+        </div>
+        <div class="rps-inner-container">
+            <img id="scissors" src="images/scissors.png" alt="scissors">
+        </div>
+    </div>
+    <div id="scoreboard">
+        <div class="minor-score">
+            Computer Score: <span>0</span>
+        </div>
+        <div class="minor-score">
+            Player Score: <span>0</span>
+        </div>
+    </div>
 </body>
 </html>

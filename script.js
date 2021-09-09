@@ -64,4 +64,4 @@ function game (playRound, computerSelection, playerSelection) {
     }
 }
 
-game(playRound, computerSelection, playerSelection);
+// game(playRound, computerSelection, playerSelection);
