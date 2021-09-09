@@ -69,8 +69,18 @@ body {
 
 #rock,
 #paper,
-#scissors {
-  filter: drop-shadow(8px 3px 3px rgba(0, 0, 0, 0.6));
+#scissors,
+#start {
+  filter: drop-shadow(8px 3px 3px rgba(0, 0, 0, 0.7));
+  transition: 0.2s;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover,
+#start:hover {
+  filter: drop-shadow(12px 6px 6px rgba(0, 0, 0, 0.5));
+  transform: scale(1.05);
 }
 
 #rock {
