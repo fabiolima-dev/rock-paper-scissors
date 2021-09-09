@@ -32,6 +32,7 @@ body {
 
 #start-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 180px;
@@ -45,6 +46,11 @@ body {
   padding: 20px 30px;
   border: none;
   margin: 20px;
+}
+
+p {
+  text-align: center;
+  margin: 25px 70px;
 }
 
 #rps-container {
@@ -71,7 +77,7 @@ body {
 #paper,
 #scissors,
 #start {
-  filter: drop-shadow(8px 3px 3px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(8px 2px 2px rgba(0, 0, 0, 0.7));
   transition: 0.2s;
 }
 
@@ -79,7 +85,7 @@ body {
 #paper:hover,
 #scissors:hover,
 #start:hover {
-  filter: drop-shadow(12px 6px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(12px 4px 4px rgba(0, 0, 0, 0.5));
   transform: scale(1.05);
 }
 
@@ -114,7 +120,7 @@ body {
   margin: 20px;
 }
 
-@media screen and (max-width 1100px) {
+@media screen and (max-width: 1100px) {
   #scoreboard {
     justify-content: space-evenly;
   }

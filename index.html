@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,8 @@
         <h1 id="title">ROCK &<BR>PAPER &<BR>SCISSORS</h1>
     </div>
     <div id="start-container">
-        <button id="start" type="submit">START GAME</button>
+        <button id="start" type="button">START GAME</button>
+        <p>A best of five Rock, Paper Scissors game</p>
     </div>    
     <div id="rps-container">
         <div class="rps-inner-container">
@@ -31,10 +32,10 @@
     </div>
     <div id="scoreboard">
         <div class="minor-score">
-            Computer Score: <span>0</span>
+            Computer Score: <span id="computer-score">0</span>
         </div>
         <div class="minor-score">
-            Player Score: <span>0</span>
+            Player Score: <span id="player-score">0</span>
         </div>
     </div>
 </body>

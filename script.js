@@ -1,67 +1,95 @@
-function computerSelection () {
+function getComputerSelection () {
     const randomNumber = Math.floor(Math.random() * 3);
-    let computerPlay
+    let computerSelection
     if (randomNumber === 0) {
-        computerPlay = "rock";
+        computerSelection = "rock";
     } else if (randomNumber === 1) {
-        computerPlay = "paper";
+        computerSelection = "paper";
     } else {
-        computerPlay = "scissors";
+        computerSelection = "scissors";
     }
-    return computerPlay;
+    return computerSelection;
 }
 
-function playerSelection () {
-    const playerPlay = prompt("Rock, Paper or Scissors?").toLowerCase();
-    return playerPlay;
-}
-
-function playRound (computerPlay, playerPlay) {
-    if (computerPlay == playerPlay) {
-        return "Tie game";
-    } else if (computerPlay === "rock") {
-        if (playerPlay === "paper") {
-            return "You won";
+function getRoundWinner (computerSelection, playerSelection) {
+    if (computerSelection == playerSelection) {
+        return "tie";
+    } else if (computerSelection === "rock") {
+        if (playerSelection === "paper") {
+            return "player";
         } else {
-            return "You lost";
+            return "computer";
         }
-    } else if (computerPlay === "paper") {
-        if (playerPlay === "scissors") {
-            return "You won";
+    } else if (computerSelection === "paper") {
+        if (playerSelection === "scissors") {
+            return "player";
         } else {
-            return "You lost";
+            return "computer";
         }
-    } else if (computerPlay === "scissors") {
-        if (playerPlay === "rock") {
-            return "You won";
+    } else if (computerSelection === "scissors") {
+        if (playerSelection === "rock") {
+            return "player";
         } else {
-            return "You lost";
+            return "computer";
         }
     }
 }
 
-function game (playRound, computerSelection, playerSelection) {
-    let computerScore = 0;
-    let playerScore = 0;
-    while (computerScore < 5 && playerScore < 5) {
-        const computerPlay = computerSelection();
-        const playerPlay = playerSelection();
-        if (playRound(computerPlay, playerPlay) === "Tie game") {
-            console.log("Tie game");
-            console.log(`Computer Score ${computerScore}`);
-            console.log(`Player Score ${playerScore}`);
-        } else if (playRound(computerPlay, playerPlay) === "You won") {
-            console.log("You won this round")
-            playerScore++;
-            console.log(`Computer Score ${computerScore}`);
-            console.log(`Player Score ${playerScore}`);
-        } else {
-            console.log("You lose this round")
-            computerScore++;
-            console.log(`Computer Score ${computerScore}`);
-            console.log(`Player Score ${playerScore}`);
-        }
+function game (playerSelection,) {
+    const computerSelection = getComputerSelection();
+    const roundWinner = getRoundWinner(computerSelection, playerSelection);
+    if (roundWinner === 'tie') {
+        p.textContent = `The computer played ${computerSelection}. It's a tie!`
+    } else if (roundWinner === 'player') {
+        p.textContent = `The computer played ${computerSelection}. You Win this round!!! :D`
+        playerScore.textContent++;
+    } else {
+        p.textContent = `The computer played ${computerSelection}. You lose this round :(`
+        computerScore.textContent++;
+    }
+    if (computerScore.textContent === '5') {
+        p.textContent = 'the computer won the game :(';
+        endgame()
+    } else if (playerScore.textContent === '5') {
+        p.textContent = 'YOU WIN!!! :D';
+        endgame()
     }
 }
 
-// game(playRound, computerSelection, playerSelection);
+function endgame () {
+    start.textContent = "PLAY AGAIN";
+    rock.onclick = "";
+    paper.onclick = "";
+    scissors.onclick = "";
+};
+
+const startContainer = document.querySelector('#start-container');
+
+const start = document.querySelector('#start');
+
+const p = document.querySelector('p');
+
+const rock = document.querySelector('#rock');
+
+const paper = document.querySelector('#paper');
+
+const scissors = document.querySelector('#scissors');
+
+const computerScore = document.querySelector("#computer-score");
+
+const playerScore = document.querySelector("#player-score");
+
+start.onclick = () => {
+
+    start.textContent = "RESTART"
+
+    start.onclick = () => {
+        window.location.reload(false);
+    };
+
+    rock.onclick = () => game(rock.id);
+    
+    paper.onclick = () => game(paper.id);
+    
+    scissors.onclick = () => game(scissors.id);  
+};
